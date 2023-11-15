@@ -18,6 +18,7 @@ jobs:
 
     - name: Criar Pull Request
       run: |
+        git fetch origin staging
         git checkout staging
         git pull origin staging
         echo "Arquivo de teste para o cron job" > test_file.txt
