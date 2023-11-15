@@ -18,7 +18,7 @@ const contactContent: ContactContent = {
     title: 'Clearviction | Contact Us - Reach Out for Support and Information',
     content: 'Have questions or concerns? Contact our team, and we\'ll respond within 24 hours.',
   },
-  title: 'Get in contact with CV',
+  title: 'Get in contact with us',
   subtitle: '**Have questions? Send us a message and we\'ll get back to you within 24 hours.**',
   sendButtonText: 'Send message',
   contactTypes: [
