@@ -20,11 +20,6 @@ jobs:
       run: |
         git fetch origin staging
         git checkout staging
-        git pull origin staging
-        echo "Arquivo de teste para o cron job" > test_file.txt
-        git add .
-        git commit -m "Cron job creation - $(date +"%Y-%m-%d %H:%M:%S")"
-        git push origin staging
 
         gh pr create --base main --head staging --title "Cron job creation - $(date +"%Y-%m-%d %H:%M:%S")" --body "Este é um Pull Request criado automaticamente por um cron job."
       env:
