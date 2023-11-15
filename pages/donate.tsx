@@ -1,5 +1,4 @@
 import { Grid } from '@mui/material';
-import Script from 'next/script';
 import React from 'react';
 
 import externalLinks from '../components/functional/ExternalLinks.tsx';
@@ -22,8 +21,6 @@ export default function DonatePage() {
         metaContent={content.meta.content}
       />
 
-      <Script src="https://donorbox.org/widget.js" />
-
       <HeroBanner
         header={content.heroBanner.header}
         subheading={content.heroBanner.subheading}
@@ -35,16 +32,16 @@ export default function DonatePage() {
 
       <SectionContainer id={content.page.id}>
         <PaperSection
+          className="donation-details-section"
           title={content.page.title}
           subtitle={content.page.subtitle}
-          ctaLink={content.page.ctaLink}
-          ctaText={content.page.ctaText}
         >
 
           <Grid container spacing={4}>
             {
             content.page.items.map((item) => (
               <GridItemCard
+                className={item.id}
                 key={item.id}
                 xs={12}
                 sm={6}
@@ -62,7 +59,7 @@ export default function DonatePage() {
         <PaperSection title="Donation FAQ">
 
           {content.donateFAQS.map((donate) => (
-            <Grid key={donate.id} item xs={12} sm={6} md={4}>
+            <Grid className={`faq-${donate.id}`} key={donate.id} item xs={12} sm={6} md={4}>
               <AccordionBuilder
                 id={donate.id}
                 summary={donate.summary}
