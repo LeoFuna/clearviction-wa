@@ -1,0 +1,30 @@
+name: Every other week staging to main
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_job:
+        description: 'Executar o job manualmente'
+        required: true
+        default: 'yes'
+
+jobs:
+  send-api-request:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4.1.1
+
+    - name: Criar Pull Request
+      run: |
+        git checkout staging
+        git pull origin staging
+        echo "Arquivo de teste para o cron job" > test_file.txt
+        git add .
+        git commit -m "Cron job creation - $(date +"%Y-%m-%d %H:%M:%S")"
+        git push origin staging
+
+        gh pr create --base main --head staging --title "Cron job creation - $(date +"%Y-%m-%d %H:%M:%S")" --body "Este é um Pull Request criado automaticamente por um cron job."
+      env:
+        API_ENDPOINT: ${{ secrets.MONTH_ACC_API_ENDPOINT }}
