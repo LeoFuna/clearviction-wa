@@ -19,3 +19,5 @@ jobs:
         git pull origin main
         git checkout -b staging
         git push origin staging
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
