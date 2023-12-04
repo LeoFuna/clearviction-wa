@@ -17,7 +17,7 @@ const content: HomeContent = {
     content: 'Washington Law allows for vacation of select criminal records. Clearviction\'s free tools help individuals assess their eligibility for a fresh start.',
   },
   heroBanner: {
-    header: 'Ola Mundo! Check your eligibility to vacate a Washington State conviction',
+    header: 'Hello World! Check your eligibility to vacate a Washington State conviction',
     subheading: 'Our free eligibility calculator can check if your conviction qualifies for vacation in less than 10 minutes.',
     ctaLink: '/calculator/head-initial-1-cont',
     ctaText: 'Access Calculator',

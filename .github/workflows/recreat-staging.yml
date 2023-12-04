@@ -16,8 +16,5 @@ jobs:
     - name: Create staging branch from main
       run: |
         git checkout main
-        git pull origin main
-        git checkout -b staging
-        git push origin staging
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
