@@ -5,6 +5,24 @@ import { Inter, Sintony } from 'next/font/google';
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import React, { forwardRef } from 'react';
 
+declare module '@mui/material/styles' {
+  interface Palette {
+    link: Palette['primary'];
+  }
+
+  interface PaletteOptions {
+    link?: PaletteOptions['primary'];
+  }
+
+  interface Theme {
+    calculatorTypography: Theme['typography'];
+  }
+
+  interface ThemeOptions{
+    calculatorTypography?: ThemeOptions['typography'];
+  }
+}
+
 export const sintony = Sintony({
   weight: ['400', '700'],
   subsets: ['latin'],
@@ -36,6 +54,7 @@ const theme = createTheme({
       light: '#FFEEA3',
       main: '#FFD200',
       contrastText: '#000000',
+      dark: '#546B95',
     },
     // where did this come from?
     neutral: {
@@ -59,6 +78,9 @@ const theme = createTheme({
     background: {
       default: '#FAFAFA',
       paper: '#FFFFFF',
+    },
+    link: {
+      main: '#007CFF',
     },
   },
   typography: {
@@ -152,6 +174,37 @@ const theme = createTheme({
       letterSpacing: '.0938rem',
     },
   },
+  calculatorTypography: {
+    h1: {
+      fontSize: '2.5rem',
+      lineHeight: '3.75rem',
+      letterSpacing: '0.05rem',
+      fontStyle: 'normal',
+      fontWeight: '600',
+    },
+    h3: {
+      fontSize: '1.25rem',
+      lineHeight: '1.875rem',
+      letterSpacing: '0.00625rem',
+      fontStyle: 'normal',
+      fontWeight: '400',
+    },
+    h6: {
+      fontSize: '0.875rem',
+      lineHeight: 'normal',
+      letterSpacing: '0.0175rem',
+      fontStyle: 'normal',
+      fontWeight: '600',
+    },
+    body1: {
+      fontSize: '1.25rem',
+      lineHeight: '1.625rem',
+      letterSpacing: '0.03125rem',
+      fontStyle: 'normal',
+      fontWeight: '600',
+      marginBottom: '1rem',
+    },
+  },
 });
 
 theme.components = {
@@ -175,6 +228,11 @@ theme.components = {
     defaultProps: {
       component: LinkBehavior,
     } as LinkProps,
+    styleOverrides: {
+      root: {
+        color: theme.palette.link.main,
+      },
+    },
   },
   MuiTabs: {
     styleOverrides: {
