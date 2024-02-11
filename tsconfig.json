@@ -30,7 +30,7 @@
     "clearviction-wa/sanity-block-content-to-react.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "cypress/e2e/*.cy.ts"  ],
   "exclude": [
     "node_modules"
   ]
