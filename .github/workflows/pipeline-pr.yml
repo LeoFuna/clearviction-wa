@@ -86,8 +86,8 @@ jobs:
     - name: Iniciar servidor Next.js
       run: npm run dev &
 
-    - name: Esperar 30 segundos para o servidor iniciar (ajuste conforme necessário)
-      run: sleep 15
+    - name: Esperar 60 segundos para o servidor iniciar (ajuste conforme necessário)
+      run: sleep 60
 
     - name: Executar testes Cypress
       run: npm run cy:run
