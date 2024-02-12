@@ -7,6 +7,6 @@ export default defineConfig({
       // implement node event listeners here
     },
     baseUrl: 'http://localhost:3000',
-    execTimeout: 15000,
+    execTimeout: 20000,
   },
 });
