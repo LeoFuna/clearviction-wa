@@ -37,9 +37,9 @@ jobs:
           build: npm run build
           start: npm run dev
           wait-on: "http://localhost:3000"
-        env:
-          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
-          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+        # env:
+        #   NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+        #   NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
 
   # lint:
   #   runs-on: ubuntu-latest
