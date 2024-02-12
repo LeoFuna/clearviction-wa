@@ -8,5 +8,6 @@ export default defineConfig({
     },
     baseUrl: 'http://localhost:3000',
     execTimeout: 20000,
+    defaultCommandTimeout: 15000,
   },
 });
